@@ -4,11 +4,12 @@
 
 [Version]
 Signature="$WINDOWS NT$"
-Class=Sample ; TODO: edit Class
-ClassGuid={78A1C341-4539-11d3-B88D-00C04FAD5171} ; TODO: edit ClassGuid
+Class=System ; TODO: edit Class
+ClassGuid={4d36e97d-e325-11ce-bfc1-08002be10318} ; TODO: edit ClassGuid
 Provider=%ManufacturerName%
 CatalogFile=kmclass.cat
-DriverVer = 03/16/2020,18.33.3.89
+PnpLockdown=1
+DriverVer = 09/06/2022,23.59.21.182
 
 [DestinationDirs]
 DefaultDestDir = 12
@@ -16,12 +17,12 @@ kmclass_Device_CoInstaller_CopyFiles = 11
 
 ; ================= Class section =====================
 
-[ClassInstall32]
-Addreg=SampleClassReg
+;[ClassInstall32]
+;Addreg=SampleClassReg
 
-[SampleClassReg]
-HKR,,,0,%ClassName%
-HKR,,Icon,,-5
+;[SampleClassReg]
+;HKR,,,0,%ClassName%
+;HKR,,Icon,,-5
 
 [SourceDisksNames]
 1 = %DiskName%,,,""
@@ -63,7 +64,6 @@ ServiceBinary  = %12%\kmclass.sys
 ;--- kmclass_Device Coinstaller installation ------
 ;
 
-
 [kmclass_Device.NT.CoInstallers]
 AddReg=kmclass_Device_CoInstaller_AddReg
 CopyFiles=kmclass_Device_CoInstaller_CopyFiles
@@ -83,7 +83,7 @@ KmdfLibraryVersion = 1.15
 
 [Strings]
 SPSVCINST_ASSOCSERVICE= 0x00000002
-ManufacturerName="diyishuai" ;TODO: Replace with your manufacturer name
+ManufacturerName="<Your manufacturer name>" ;TODO: Replace with your manufacturer name
 ClassName="Samples" ; TODO: edit ClassName
 DiskName = "kmclass Installation Disk"
 kmclass.DeviceDesc = "kmclass Device"
